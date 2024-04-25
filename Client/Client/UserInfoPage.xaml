@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Client.UserInfoPage"
+             Title="UserInfoPage">
+    <ScrollView>
+        <VerticalStackLayout
+             Spacing="25"
+            Padding="60,0"
+            HorizontalOptions="Center">
+            <Image x:Name="Avatar" MaximumWidthRequest="100" MaximumHeightRequest="100"/>
+            <Label x:Name="UserName"/>
+            <Button Text="Отправить сообщение" Clicked="SendMessage"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

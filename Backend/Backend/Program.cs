@@ -1,6 +1,5 @@
 using Backend.DB;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();

@@ -1,4 +1,5 @@
 ﻿using Backend.DB;
+using Backend.Interface;
 using Backend.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,12 +15,12 @@ namespace Backend.Controllers
             this.database = database;
         }
         [HttpPost]
-        public Dictionary<string, string> CreateUser([FromBody] User user)
+        public ICustomResponse CreateUser([FromBody] User user)
         {
             if (user.Name.Length < 2 || user.LastName.Length < 2 || user.Password.Length < 3)
-                return Responses.BadRequest();
+                return new BadRequest();
             database.userManager.InsertUser(user);
-            return Responses.GoodResponse();
+            return new GoodResponse(user.Token.GenerateToken());
         }
     }
 }

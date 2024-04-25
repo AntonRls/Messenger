@@ -1,14 +1,36 @@
-﻿namespace Backend
+﻿
+using Backend.Interface;
+
+namespace Backend
 {
-    public class Responses
+    public class GoodResponse : ICustomResponse
     {
-        public static Dictionary<string, string> GoodResponse()
+        public Dictionary<string, string> Response { get; set; }
+        public GoodResponse()
         {
-            return new Dictionary<string, string> { { "response", "ok" } };
+            this.Response = new Dictionary<string, string> { { "answer", "ok" } };
         }
-        public static Dictionary<string, string> BadRequest()
+        public GoodResponse(string text)
         {
-            return new Dictionary<string, string> { { "error", "bad request" } };
+            this.Response = new Dictionary<string, string> { { "answer", text } };
+        }
+        public GoodResponse(string name, string text)
+        {
+            this.Response = new Dictionary<string, string> { { name, text } };
         }
     }
+    public class BadRequest : ICustomResponse
+    {
+        public Dictionary<string, string> Response { get; set; }
+
+        public BadRequest()
+        {
+            this.Response = new Dictionary<string, string> { { "error", "bad request" } };
+        }
+        public BadRequest(string text)
+        {
+            this.Response = new Dictionary<string, string> { { "error", text } };
+        }
+    }
+
 }

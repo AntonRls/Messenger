@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Client.DialogsPage"
+             Title="DialogsPage">
+    <Grid>
+        <ListView x:Name="listView" Margin="20, 20, 20, 20" VerticalScrollBarVisibility="Always" ItemTapped="listView_ItemTapped" RowHeight="{OnIdiom Phone=100}">
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <ViewCell >
+                        <HorizontalStackLayout Padding="25">
+                            <Image Source="{Binding User.Image}" MaximumWidthRequest="50" MaximumHeightRequest="50"/>
+                            <VerticalStackLayout>
+                                <Label Text="{Binding User.FullName}" Margin="20,10,20,0" VerticalOptions="Center" FontSize="Body"/>
+                                <HorizontalStackLayout>
+                                    <Label Text="{Binding LastMessage.Text}" Margin="20,0,20,10" VerticalOptions="Center" FontSize="Caption"/>
+                                    <Label Text="{Binding LastMessage.HourAndMinuteMessage}" Margin="20,0,20,10" VerticalOptions="Center" FontSize="Caption"/>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                   
+                        </HorizontalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

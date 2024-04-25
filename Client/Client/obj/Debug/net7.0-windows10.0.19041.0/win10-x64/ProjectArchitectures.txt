@@ -1,0 +1,1 @@
+C:\GitHub\Messenger\Client\Client\Client.csproj;x64

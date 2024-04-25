@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Client.MessagePage"
+             Title="MessagePage">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0">
+            <Grid>
+                <ListView x:Name="listView" Margin="20, 20, 20, 20" VerticalScrollBarVisibility="Always" RowHeight="130" SeparatorColor="Gray">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+          
+                                <HorizontalStackLayout Padding="25,25,5,5">
+                                        <Image Source="{Binding From.Image}" MaximumWidthRequest="50" MaximumHeightRequest="50"/>
+                                        
+                                        <VerticalStackLayout VerticalOptions="Center">
+                                            <Label Text="{Binding From.FullName}" Margin="20,20,20,0" VerticalOptions="Center"/>
+                                            <Label Text="{Binding Text}" Margin="20,0,20,20" VerticalOptions="Center"/>
+                                        </VerticalStackLayout>
+
+                                    <Label Text="{Binding HourAndMinuteMessage}" Margin="20,0,20,20" VerticalOptions="Center"/>
+                                </HorizontalStackLayout>
+                                    
+                                
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            
+            <HorizontalStackLayout>
+                <Entry x:Name="MessageEntry" MaximumWidthRequest="200" MinimumWidthRequest="200" Placeholder="Введите сообщение" VerticalTextAlignment="Center"  />
+                <Button Text="->" Clicked="Button_Clicked"/>
+            </HorizontalStackLayout>
+       
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

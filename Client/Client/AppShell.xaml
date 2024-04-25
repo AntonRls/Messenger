@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Client.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Client"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
+    <ShellContent Route="MainPage" ContentTemplate="{DataTemplate local:MainPage}"/>
+
+    <FlyoutItem Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Icon="home.svg" Title="Пользователи"  ContentTemplate="{DataTemplate local:NewsPage}"/>
+        <ShellContent Icon="send.svg" Title="Отправить сообщение"  ContentTemplate="{DataTemplate local:DialogsPage}"/>
+        <ShellContent Icon="profileuser.svg" Title="Мой профиль" Route="ProfilePage" ContentTemplate="{DataTemplate local:ProfilePage}"/>
+    </FlyoutItem>
+
+</Shell>
+    
